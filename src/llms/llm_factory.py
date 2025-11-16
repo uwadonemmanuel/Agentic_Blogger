@@ -109,7 +109,9 @@ class LLMFactory:
             "api_key": api_key,
             "model": model,
             "temperature": temperature,
-            **kwargs
+            "max_tokens": kwargs.get("max_tokens", 4000),  # Limit response length for faster generation
+            "timeout": kwargs.get("timeout", 300),  # 5 minute timeout for long translations
+            **{k: v for k, v in kwargs.items() if k not in ["max_tokens", "timeout"]}  # Allow override
         }
         
         return ChatOpenAI(**llm_kwargs)

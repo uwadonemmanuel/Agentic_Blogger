@@ -9,18 +9,17 @@ class GraphBuilder:
     def build_topic_graph(self):
         """
         Build a graph to generate blogs based on topic
+        Optimized: Skip separate title creation, generate title and content together
         """
         graph = StateGraph(BlogState)
         blog_node_obj = BlogNode(self.llm)
         print(self.llm)
-        ## Nodes
-        graph.add_node("title_creation", blog_node_obj.title_creation)
+        ## Nodes - only content generation (which will generate title too if not present)
         graph.add_node("content_generation", blog_node_obj.content_generation)
 
-        ## Edges
-        graph.add_edge(START,"title_creation")
-        graph.add_edge("title_creation","content_generation")
-        graph.add_edge("content_generation",END)
+        ## Edges - skip title_creation for faster generation
+        graph.add_edge(START, "content_generation")
+        graph.add_edge("content_generation", END)
 
         return graph
     

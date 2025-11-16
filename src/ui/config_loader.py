@@ -39,7 +39,7 @@ class UIConfig:
             'PAGE_ICON': '📝',
             'LAYOUT': 'wide',
             'API_ENDPOINT': 'http://localhost:8000/blogs',
-            'API_TIMEOUT': '120',
+            'API_TIMEOUT': '300',
             'DEFAULT_MODEL': 'gpt-4o',
             'DEFAULT_TEMPERATURE': '0.7',
             'TEMPERATURE_MIN': '0.0',
