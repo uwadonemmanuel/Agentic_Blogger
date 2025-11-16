@@ -1,0 +1,7 @@
+[project]
+name = "agenticblogger"
+version = "0.1.0"
+description = "An AI-powered Agentic blog generation application built with LangGraph, FastAPI, and Streamlit. This app uses OpenAI models to generate blog posts on any topic and can translate them to Hindi, French, Hausa, Yoruba, or Igbo."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []

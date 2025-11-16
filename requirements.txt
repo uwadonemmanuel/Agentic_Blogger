@@ -1,0 +1,11 @@
+langchain
+langgraph
+langchain_community
+langchain_core
+langchain-openai
+fastapi
+uvicorn
+watchdog
+langgraph-cli[inmem]
+streamlit
+requests
